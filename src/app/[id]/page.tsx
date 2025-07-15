@@ -9,11 +9,10 @@ export const metadata: Metadata = {
   description: "Detailed view of a character from the Harry Potter API",
 };
 
-export default async function DetailPage({
-  params,
-}: {
+interface DetailPageProps {
   params: Promise<{ id: string }>;
-}) {
+}
+export default async function DetailPage({ params }: DetailPageProps) {
   const { id } = await params;
 
   if (isNaN(Number(id))) {

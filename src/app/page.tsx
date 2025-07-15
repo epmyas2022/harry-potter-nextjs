@@ -2,10 +2,13 @@ import { getAllCharacters } from "@/actions/character.action";
 import CardView from "@/components/CardView";
 import Search from "@/components/Search";
 
+interface PageProps {
+  search?: string;
+}
 export default async function HomePage({
   searchParams,
 }: {
-  searchParams: { search?: string };
+  searchParams: Promise<PageProps>;
 }) {
   const { search } = await searchParams;
   const characters = await getAllCharacters(search);
@@ -14,7 +17,7 @@ export default async function HomePage({
     <div className="p-10 overflow-hidden">
       <div className="flex flex-wrap gap-2 justify-between items-center">
         <h1 className="text-2xl font-bold">Characters</h1>
-          <Search />
+        <Search />
       </div>
       <br />
       <hr className="border-gray-400" />
