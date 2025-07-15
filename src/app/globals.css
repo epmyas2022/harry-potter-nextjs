@@ -1,0 +1,42 @@
+@import "tailwindcss";
+
+@font-face {
+  font-family: "Harry Potter";
+  src: url("/assets/fonts/HARRYP__.woff2") format("woff2");
+}
+
+html {
+  scrollbar-width: thin;
+  scrollbar-color: #4a5568 transparent;
+}
+body {
+  @apply h-dvh bg-black/85 text-white;
+
+  @layer components {
+    .box {
+      @apply relative bg-white rounded-lg border border-slate-200  text-slate-900;
+      &.box--stacked::after {
+        content: "";
+        @apply absolute bottom-0 left-3.5 right-3.5 bg-slate-50 top-full rounded-b-lg h-5 shadow-sm border border-slate-200 -z-10;
+      }
+    }
+  }
+
+  .background-image-text {
+    @apply bg-[url('https://uswalldecor.com/cdn/shop/files/RMK12279M.jpg?v=1695064926')]
+        bg-cover bg-center
+        bg-clip-text
+        text-transparent;
+  }
+}
+
+@theme {
+  --font-harry-potter: "Harry Potter", sans-serif;
+}
+
+@view-transition{
+  navigation: auto;
+}
+::view-transition-group(*){
+  animation-duration: 0.4s;
+}
