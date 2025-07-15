@@ -3,7 +3,6 @@ import { IconSearch } from "@tabler/icons-react";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 
-
 export default function Search() {
   const [searchTerm, setSearchTerm] = useState("");
   const router = useRouter();
@@ -17,6 +16,11 @@ export default function Search() {
         value={searchTerm}
         onChange={(e) => setSearchTerm(e.target.value)}
         type="text"
+        onKeyDown={(e) => {
+          if (e.key === "Enter") {
+            handleSearch();
+          }
+        }}
         placeholder="Search characters..."
         className=" p-2 border border-gray-300 rounded bg-black/40 shadow"
       />
