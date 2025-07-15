@@ -30,6 +30,8 @@ En caso de error con algun paquete, puedes intentar:
 npm install --legacy-peer-deps
 ```
 
+## Uso 🏃‍♂️
+
 Inicia el servidor de desarrollo:
 
 ```bash
