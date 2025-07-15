@@ -30,7 +30,7 @@ En caso de error con algun paquete, puedes intentar:
 npm install --legacy-peer-deps
 ```
 
-## Uso 🏃‍♂️
+## Inicio Rápido ⚡
 
 Inicia el servidor de desarrollo:
 
@@ -46,17 +46,6 @@ npm start
 
 ```bash
 npm run dev
-```
-
-Iniciar servidor de producción:
-
-```bash
-npm start
-```
-
-```bash
-npm run build
-npm start
 ```
 
 ## Preview 📸
