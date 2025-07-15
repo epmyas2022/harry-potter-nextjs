@@ -1,25 +1,22 @@
 import { getAllCharacters } from "@/actions/character.action";
 import CardView from "@/components/CardView";
+import Search from "@/components/Search";
 
-export default async function HomePage() {
-
-  const characters = await getAllCharacters();
-
+export default async function HomePage({
+  searchParams,
+}: {
+  searchParams: { search?: string };
+}) {
+  const { search } = await searchParams;
+  const characters = await getAllCharacters(search);
 
   return (
     <div className="p-10 overflow-hidden">
-      <div className="flex justify-between items-center">
-        <h1
-          className="text-2xl font-bold mb-4"
-        >
-          Characters
-        </h1>
-        {/*   <input
-          type="text"
-          placeholder="Search characters..."
-          className="mt-2 p-2 border border-gray-300 rounded"
-        /> */}
+      <div className="flex flex-wrap gap-2 justify-between items-center">
+        <h1 className="text-2xl font-bold">Characters</h1>
+          <Search />
       </div>
+      <br />
       <hr className="border-gray-400" />
       <br />
 
